@@ -713,58 +713,6 @@ It has helped me to gain the knowledge and skills on the basic concepts and theo
             </div>
 
 
-<script>
-function postToGoogle() {
-                var field1 = $("#nameField").val();
-                var field2 = $("#emailField").val();
-                var field3 = $("#subjectField").val();
-                var field4 = $("#messageField").text();
-            
-            if(field1 == ""){
-               alert('Please Fill Your Name');
-               document.getElementById("nameField").focus();
-               return false;
-            }
-            if(field2 == ""){
-               alert('Please Fill Your Email');
-               document.getElementById("emailField").focus();
-               return false;
-            }
-            if(field3 == "" || field3.length > 10 || field3.length < 10){
-               alert('Please enter subject');
-               document.getElementById("mobField").focus();
-               return false;
-            }
-
-
-            
-   
-                $.ajax({
-                    url: "https://docs.google.com/forms/d/e/1FAIpQLScijiAtCkzPt3xHVOi0NSkezLY_8Mp0Wbr3M4aV6oyCNF2RoQ/formResponse?",
-               data: {"entry.1136015951e": field1, "entry.635299977": field2, "entry.626014733": field3, "entry.2078134504": field4},
-                    type: "POST",
-                    dataType: "xml",
-                    success: function(d)
-               {
-               },
-               error: function(x, y, z)
-                  {
-
-                     $('#success-msg').show();
-                     $('#form').hide();
-                     
-                  }
-                });
-            return false;
-            }
-</script>
-
-
-
-
-
-
-
 
 
 
